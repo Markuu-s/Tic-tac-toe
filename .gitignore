@@ -33,3 +33,5 @@
 
 #Cmake build
 build/
+
+.vscode/

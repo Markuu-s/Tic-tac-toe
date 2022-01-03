@@ -10,4 +10,4 @@ include_directories(Draw/header)
 include_directories(Game/header)
 include_directories(Networkingk/header)
 
-add_executable(Game ${LIB_FILES})
+add_executable(Game ${SRC_FILES})
