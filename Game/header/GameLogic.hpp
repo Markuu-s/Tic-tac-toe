@@ -17,9 +17,10 @@ public:
      *  X is vertical
      *  Y is horizon
      * 
-     *  0 is win tic (first player) - X 
-     *  1 is win tac (second player) - 0
-     *  2 is draw
+     *  1 is win tic (first player) - X
+     *  2 is win tac (second player) - 0
+     *  3 is draw
+     *  0 game is continue
      *  -1 is worst move
      */
     int makeMove(std::string move);

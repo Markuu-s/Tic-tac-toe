@@ -40,8 +40,9 @@ int GameLogic::makeMove(std::string move)
         return -1;
     }
 
-    fieldGame[x][y] = true;
-
+    fieldGame[x][y] = 1 + int(!tik);
+    tik = !tik;
+    
     return checkWin();
 }
 
@@ -76,5 +77,16 @@ int GameLogic::checkWin()
         return fieldGame[2][0];
     }
 
-    return -1;
+    bool isDraw = true;
+    for(int i = 0; i < 3; ++i)
+    {
+        for(int j = 0; j< 3; ++j)
+        {
+            if (!fieldGame[i][j]) {
+                isDraw = false;
+            }
+        }
+    }
+
+    return (isDraw ? 3 : 0);
 }
