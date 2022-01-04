@@ -1,5 +1,6 @@
 #include "ConsoleDrawer.hpp"
 #include "GameLogic.hpp"
+#include "InputControllerConsole.hpp"
 #include <string>
 #include <iostream>
 
@@ -8,13 +9,13 @@ int main()
     GameLogic game;
 
     Drawer *drawer = new ConsoleDrawer();
+    InputController *inputController = new InputControllerConsole();
+
     bool gameBool = true;
     while (gameBool)
     {
         drawer->draw(game.getFieldGame());
-        std::string userMove;
-        std::cin >> userMove;
-        std::string move = "MOVE_" + userMove;
+        std::string move = inputController->getInput();
         int a = game.makeMove(move);
         std::cout << a;
         gameBool = !a;
